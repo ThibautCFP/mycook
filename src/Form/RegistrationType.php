@@ -20,10 +20,10 @@ class RegistrationType extends AbstractType
         $builder
             ->add('lastName', TextType::class, [
                 'label' => 'Nom',
-                'required' => true,
                 'attr' => [
                     'placeholder' => 'Doe'
                 ],
+                'required' => true,
             ])
             ->add('firstName', TextType::class, [
                 'label' => 'Prénom',
