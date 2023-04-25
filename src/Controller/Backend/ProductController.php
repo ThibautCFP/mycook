@@ -41,7 +41,7 @@ class ProductController extends AbstractController
 
             $this->addFlash('success', 'Produit créé avec succès');
 
-            return $this->redirectToRoute('app.admin.products.create');
+            return $this->redirectToRoute('app.admin.products.index');
         }
 
         return $this->render('Backend/Products/create.html.twig', [
@@ -67,7 +67,7 @@ class ProductController extends AbstractController
         ]);
     }
 
-    #[Route('/delete/{slug}', name: 'app.admin.products.delete', methods: ['DELETE', 'GET'])]
+    #[Route('/delete/{slug}', name: 'app.admin.products.delete', methods: ['DELETE', 'GET', 'POST'])]
     public function delete(Product $product, Request $request): Response|RedirectResponse
     {
         if (!$product instanceof Product) {

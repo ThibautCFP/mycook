@@ -1,0 +1,12 @@
+{{ form_start(form) }}
+
+<div class="row aligne-items-center">
+	{{ form_row(form.title) }}
+	{{ form_label(form.enabled) }}
+	{{ form_row(form.enabled)}}
+</div>
+
+<div class="text-center">
+	<button type="submit" class="btn btn-primary">{{ button_label }}</button>
+</div>
+{{ form_end(form) }}

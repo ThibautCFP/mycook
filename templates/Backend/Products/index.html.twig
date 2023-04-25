@@ -1,0 +1,52 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+	Admin Produits
+	{{ parent() }}
+{% endblock %}
+
+{% block body %}
+	<section class="container mt-4">
+		<h1 class="text-center">Administation des produits</h1>
+		<a href="{{ path('app.admin.products.create') }}" class="btn btn-primary">Créer un produit</a>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Titre</th>
+					<th>Visible</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			{% for product in products %}
+				<tbody>
+					<tr>
+						<td>
+							{{ product.id }}
+						</td>
+						<td>
+							{{ product.title }}
+						</td>
+						<td>
+							{{ product.enabled ? 'Oui'  : 'Non'}}
+						</td>
+						<td>
+							<div class="d-flex gap-5">
+								<a href="{{ path('app.admin.products.update', {slug: product.slug}) }}" class="btn btn-warning">Modifier</a>
+								<form action="{{ path('app.admin.products.delete', {slug: product.slug}) }}" method="POST" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer ce produit ?')">
+									<input type="hidden" name="_token" value=" {{ csrf_token('delete' ~ product.id) }} ">
+
+									<button type="submit" class="btn btn-danger text-light">Supprimer</button>
+								</form>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			{% endfor %}
+
+		</table>
+
+
+	</section>
+
+{% endblock %}
