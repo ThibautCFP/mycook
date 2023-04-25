@@ -14,5 +14,16 @@
 				</li>
 			</ul>
 		</div>
+		<div class="collapse navbar-collapse">
+			{% if app.user %}
+				<div class="me-2">
+					<a href="{{ path('app.logout') }}" class="btn btn-danger">Déconnexion</a>
+				</div>
+			{% else %}
+				<div class="me-2">
+					<a href="{{ path('app.login') }}" class="btn btn-light">Connexion</a>
+				</div>
+			{% endif %}
+		</div>
 	</nav>
 </header>
