@@ -5,4 +5,55 @@
 	{{ parent() }}
 {% endblock %}
 
-{% block body %}{% endblock %}
+{% block body %}
+	<section class="container mt-4">
+		<div class="d-flex align-items-center mt-4" id="cakes">
+			<div class="text-center w-50">
+				<h1 class="mt-4">Le coin cake</h1>
+				<p>
+					<strong>Number Cake :</strong>
+					un gateau spécial anniversaire. Conçu surmesure grâe à vos recommandations, de quoi marqué le coup !</p>
+				<p>
+					<strong>Cupcake :</strong>
+					petit mais nombreux ! Un gateau selon vos goûts, idéal après un gros festin !
+				</p>
+				<p>
+					<strong>Lettercake :
+					</strong>
+					Un alphabet tout entier à manger !
+				</p>
+				<p>
+					<strong>Layer Cake :</strong>
+					Une montagne de gourmandise !
+				</p>
+				<p>
+					<strong>...</strong>
+				</p>
+			</div>
+			<div class="d-flex w-50 flex-wrap">
+				<img src="build/images/numbercake.jpg" alt="" class="w-50 p-2">
+				<img src="build/images/lettercake.jpg" alt="" class="w-50 p-2">
+				<img src="build/images/layercake.jpg" alt="" class="w-50 p-2">
+				<img src="build/images/cakechoc.jpg" alt="" class="w-50 p-2">
+			</div>
+		</div>
+		<div class="d-flex align-items-center mt-4" id="traiteur">
+			<div class="d-flex w-50 flex-wrap">
+				<img src="build/images/traiteur1.jpg" alt="" class="w-50 p-2">
+				<img src="build/images/traiteur2.jpg" alt="" class="w-50 p-2">
+			</div>
+			<div class="text-center w-50 mt-4">
+				<h1 class="mt-4">Le coin traiteur</h1>
+				<p>Un coin traiteur divers et varié et pour tous les moments, petit-déjeuner ou apéritif.</p>
+				<p>Vous y trouverez :
+					<strong>
+						gauffre, mini burger, crêpe, croissant, pain au chocolat, hotdog, bricks...
+					</strong>
+				</p>
+			</div>
+
+		</div>
+
+	</section>
+
+{% endblock %}
