@@ -44,8 +44,16 @@ class ContactRepository extends ServiceEntityRepository
     {
         return $this->createQueryBuilder('c')
             ->where('c.author = :id')
-            ->orderBy('c.createdAt', 'ASC')
+            ->orderBy('c.createdAt', 'DESC')
             ->setParameter('id', $id)
+            ->getQuery()
+            ->getResult();
+    }
+
+    public function findByDate(): array
+    {
+        return $this->createQueryBuilder('c')
+            ->orderBy('c.createdAt', 'DESC')
             ->getQuery()
             ->getResult();
     }
