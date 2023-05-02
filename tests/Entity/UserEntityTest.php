@@ -31,7 +31,7 @@ class UserEntityTest extends KernelTestCase
     {
         // On charge les utilisateurs en base
         $users = $this->databaseTool->loadAliceFixture([
-            \dirname(__DIR__) . '/Fixtures/UserFixtures.yaml',
+            \dirname(__DIR__) . '/Fixtures/UserTestFixtures.yaml',
         ]);
 
         // On compte le nombre d'entrée dans la table User
