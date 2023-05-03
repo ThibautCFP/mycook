@@ -1,0 +1,35 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+	Nouvelle demande
+	{{ parent() }}
+{% endblock %}
+
+{% block body %}
+	<section class="container mt-4">
+		<h1 class="text-center">Nouvelle demande de contact</h1>
+		<div class="card p-3 mx-auto w-50">
+			{{ form_start(form) }}
+
+			<div class="row">
+				<div class="col-md-6">{{ form_row(form.lastName) }}</div>
+				<div class="col-md-6">
+					{{ form_row(form.firstName) }}
+				</div>
+				<div class="col-md-6">
+					{{ form_row(form.email) }}
+				</div>
+			</div>
+			{{ form_row(form.title) }}
+			{{ form_row(form.content) }}
+			{{ form_row(form.rgpd) }}
+
+			<div class="text-center">
+				<button type="submit" class="btn btn-primary">Envoyer</button>
+			</div>
+			{{ form_end(form) }}
+		</div>
+
+	</section>
+
+{% endblock %}

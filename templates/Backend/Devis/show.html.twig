@@ -1,0 +1,45 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+	Admin devis
+	{{ parent() }}
+{% endblock %}
+
+{% block body %}
+	<section class="container mt-4">
+		<h1 class="text-center">Visualisation du devis n°{{ devis.id }}</h1>
+		<div class="card p-3 w-75 mx-auto">
+			<div class="row">
+				<div class="col-md-6">
+					<label for="" class="form-label">Nom de famille</label>
+					<input type="text" class="form-control" disabled value="{{ devis.lastName }}">
+				</div>
+				<div class="col-md-6">
+					<label for="" class="form-label">Prénom</label>
+					<input type="text" class="form-control" disabled value="{{ devis.firstName }}">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<label for="" class="form-label">Email</label>
+					<input type="text" class="form-control" disabled value="{{ devis.email }}">
+				</div>
+				<div class="col-md-6">
+					{% if devis.phone is not empty %}
+						<label for="" class="form-label"></label>
+						<input type="text" class="form-control" disabled value="{{ devis.phone }}">
+					{% endif %}
+				</div>
+			</div>
+			<label for="" class="form-label">Contenu</label>
+			<input type="text" class="form-control" disabled value="{{ devis.content }}">
+			{% if devis.comment is not empty %}
+				<label for="" class="form-label">Commentaire</label>
+				<input type="text" class="form-control" disabled value="{{ devis.comment }}">
+			{% endif %}
+		</div>
+		<a href="{{ path('app.admin.devis.index') }}" class="btn btn-primary mt-4">
+			<i class="bi bi-arrow-return-left"></i>
+			Retour à la liste</a>
+	</section>
+{% endblock %}

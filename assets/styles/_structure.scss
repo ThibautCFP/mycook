@@ -9,6 +9,7 @@ body {
     scroll-behavior: smooth;
     scroll-padding-top: 5rem;
     font-family: "Open Sans", sans-serif;
+    background-color: antiquewhite;
 }
 
 h1,
@@ -71,11 +72,11 @@ ol {
     list-style: none;
 }
 
-a {
-    text-decoration: none;
-    color: inherit;
-    display: inline-block;
-}
+// a {
+//     text-decoration: none;
+//     color: inherit;
+//     display: inline-block;
+// }
 
 img,
 figure,

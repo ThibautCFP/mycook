@@ -1,0 +1,46 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+	Admin contacts
+	{{ parent() }}
+{% endblock %}
+
+{% block body %}
+	<section class="container mt-4">
+		<h1 class="text-center">Administration des demandes</h1>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Titre</th>
+					<th>Contenu</th>
+					<th>Créée le</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			{% for contact in contacts %}
+				<tbody>
+					<tr>
+						<td>
+							{{ contact.id }}
+						</td>
+						<td>
+							{{ contact.title}}
+						</td>
+						<td>
+							{{ contact.content|slice(0,50) ~ "..."  }}
+						</td>
+						<td>
+							{{ contact.createdAt|format_datetime(locale="fr")}}
+						</td>
+						<td>
+							<div class="d-flex">
+								<a href="{{ path('app.admin.contacts.show', {id: contact.id}) }}" class="btn btn-info">Voir plus</a>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			{% endfor %}
+		</table>
+	</section>
+{% endblock %}

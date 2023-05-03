@@ -1,0 +1,36 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+	Contact
+	{{ parent() }}
+{% endblock %}
+
+{% block body %}
+	<section class="container mt-4">
+		<h1 class="text-center">Visualisation de la demande n°{{ contact.id }}</h1>
+		<div class="card p-3 w-75 mx-auto">
+			<div class="row">
+				<div class="col-md-6">
+					<label for="" class="form-label">Nom</label>
+					<input type="text" class="form-control" disabled value="{{ contact.lastName }}">
+				</div>
+				<div class="col-md-6">
+					<label for="" class="form-label">Prénom</label>
+					<input type="text" class="form-control" disabled value="{{ contact.firstName }}">
+				</div>
+				<div class="col-md-6">
+					<label for="" class="form-label">Email</label>
+					<input type="text" class="form-control" disabled value="{{ contact.email }}">
+				</div>
+			</div>
+			<label for="" class="form-label">Titre</label>
+			<input type="text" class="form-control" disabled value="{{ contact.title }}">
+			<label for="" class="form-label">Contenu</label>
+			<input type="text" class="form-control" disabled value="{{ contact.content }}">
+		</div>
+		<a href="{{ path('app.admin.contacts.index') }}" class="btn btn-primary mt-4">
+			<i class="bi bi-arrow-return-left"></i>
+			Retour à la liste</a>
+
+	</section>
+{% endblock %}

@@ -13,4 +13,10 @@ import './bootstrap';
 
 import './js/addInputCollectionType';
 
+require('bootstrap');
+
+$(document).ready(function () {
+    $('[data-toggle="popover"]').popover();
+});
+
 

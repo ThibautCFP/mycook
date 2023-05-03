@@ -1,0 +1,62 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+	Contacts
+	{{ parent() }}
+{% endblock %}
+
+{% block body %}
+	<section class="container mt-4">
+		<h1 class="text-center">Demandes de contact</h1>
+		{% if app.user %}
+			{% if contacts|length > 0 %}
+				<table class="table">
+					<thead>
+						<tr>
+							<th>Id</th>
+							<th>Titre</th>
+							<th>Contenu</th>
+							<th>Créée le</th>
+							<th>Actions</th>
+						</tr>
+					</thead>
+					{% for contact in contacts %}
+						<tbody>
+							<tr>
+								<td>
+									{{ contact.id }}
+								</td>
+								<td>
+									{{ contact.title}}
+								</td>
+								<td>
+									{{ contact.content|slice(0,50) ~ "..."  }}
+								</td>
+								<td>
+									{{ contact.createdAt|format_datetime(locale="fr")}}
+								</td>
+								<td>
+									Soon
+								</td>
+							</tr>
+						</tbody>
+					{% endfor %}
+				</table>
+
+			{% else %}
+				<div class="alert alert-info text-center">
+					<p>Aucune demande n'a été enregistré par votre compte.</p>
+				</div>
+			{% endif %}
+		{% else %}
+			<div class="alert alert-info text-center">
+				<p>Pour pouvoir visualiser l'historique de vos demandes vous devez avoir créé une demande en étant connecté</p>
+			</div>
+		{% endif %}
+		<div class="text-center">
+			<a href="{{ path('app.contact.create') }}" class="btn btn-primary">Nouvelle demande</a>
+
+		</div>
+	</section>
+
+{% endblock %}

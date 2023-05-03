@@ -1,0 +1,39 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+	Admin devis
+	{{ parent() }}
+{% endblock %}
+
+{% block body %}
+	<section class="container mt-4">
+		<h1 class="text-center">
+			Administration des devis
+		</h1>
+
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Email</th>
+					<th>Téléphone</th>
+					<th>Content</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			{% for devi in devis %}
+				<tbody>
+					<tr>
+						<td>{{ devi.id }}</td>
+						<td>{{ devi.email }}</td>
+						<td>{{ devi.phone}}</td>
+						<td>{{ devi.content|slice(0,50) ~ '...' }}</td>
+						<td>
+							<a href="{{ path('app.admin.devis.show', {id: devi.id}) }}" class="btn btn-info">Voir plus</a>
+						</td>
+					</tr>
+				</tbody>
+			{% endfor %}
+		</table>
+	</section>
+{% endblock %}

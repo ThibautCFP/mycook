@@ -8,9 +8,9 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class AdminController extends AbstractController
 {
-    #[Route('/admin')]
-    public function index(): Response
-    {
-        return $this->render('Backend/Admin/index.html.twig');
-    }
+    // #[Route('/admin')]
+    // public function index(): Response
+    // {
+    //     return $this->render('Backend/Admin/index.html.twig');
+    // }
 }
